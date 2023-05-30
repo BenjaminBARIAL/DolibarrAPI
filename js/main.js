@@ -1,3 +1,6 @@
+let api_key = atob(decodeURIComponent(getCookie('token')));
+let domaine = decodeURIComponent(getCookie('domaine'));
+
 /*
  * Gestion du fond d'écran
  */

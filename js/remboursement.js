@@ -1,8 +1,5 @@
 const montant = document.getElementById("montant");
-const DataList = document.getElementById('Destinataire')
-let api_key = atob(decodeURIComponent(getCookie('token')));
-let domaine = decodeURIComponent(getCookie('domaine'));
-let url = `http://${domaine}/api/index.php/`;
+const DataList = document.getElementById('Destinataire');
 
 /*
  * Affiche le symbol "€" pour le montant

@@ -1,17 +1,13 @@
-let api_key = atob(decodeURIComponent(getCookie('token')));
-let domaine = decodeURIComponent(getCookie('domaine'));
-let url = `http://${domaine}/api/index.php/`;
-
 const envoie = document.getElementById('envoie')
 
 envoie.addEventListener('click', e => {
   e.preventDefault()
-  const date_deb = DateToTimestamp(document.getElementById('date_deb').value);
-  const date_fin = DateToTimestamp(document.getElementById('date_fin').value);
-  const user = document.getElementById('user').value;
-  const approb = document.getElementById('approb').value;
-  const note_pub = document.getElementById('note_pub').value;
-  const note_priv = document.getElementById('note_priv').value;
+  const date_deb = DateToTimestamp(antiXSS(document.getElementById('date_deb').value));
+  const date_fin = DateToTimestamp(antiXSS(document.getElementById('date_fin').value));
+  const user = antiXSS(document.getElementById('user').value);
+  const approb = antiXSS(document.getElementById('approb').value);
+  const note_pub = antiXSS(document.getElementById('note_pub').value);
+  const note_priv = antiXSS(document.getElementById('note_priv').value);
   note = {
     "fk_user_author": user,
     "date_debut": date_deb,
@@ -20,10 +16,8 @@ envoie.addEventListener('click', e => {
     "note_public": note_pub,
     "note_private": note_priv,
   }
-  sendExpenseReports(note, url, api_key)
+  sendExpenseReports(note, domaine, api_key)
 })
-
-
 
 fetchExpenseReports().then(notes => {
   notes.forEach(note => {

@@ -4,7 +4,7 @@
   --primary-color: #4e0146;
   --button-picture: 225px;
   --button-card: 175px;
-  /*--rgb: color-change 5s infinite;*/
+  --rgb: color-change 5s infinite;
 }
 
 * {
@@ -144,18 +144,11 @@ a {
   }
 }
 
-.nav-branding:hover {
-  font-weight: normal;
-  transition: all 0.1s ease;
-}
-
-.nav-link {
-  transition: 0.7s ease-in-out;
-  cursor: pointer;
-}
-
 .nav-link:hover {
   text-decoration: underline;
+  text-decoration-style: dashed;
+  animation: var(--rgb);
+  cursor: pointer;
 }
 
 .hamburger {
@@ -283,7 +276,7 @@ footer {
 
 sup {
   color: #f00;
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 5px;
   font-weight: 700;
 }
@@ -324,7 +317,6 @@ p {
 .button_picture {
   max-width: var(--button-picture);
   max-height: var(--button-picture);
-  object-fit: contain;
 }
 
 .button_a {
@@ -513,5 +505,15 @@ textarea::after {
   .bank {
     height: 25svh;
     width: 90svw;
+  }
+  .button-text {
+    font-size: 14px;
+  }
+  .actions {
+    width: 125px;
+    height: 125px;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
 }

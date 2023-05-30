@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
-  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/babarelephant.svg"/>
   <title>Facture</title>
 
   <!-- fonts -->
@@ -24,7 +24,7 @@
     <nav class="navbar">
       <a href="accueil.html" class="nav-branding">DolibarrAPI</a>
 
-      <ul class="nav-menu medium-blur">
+      <ul class="nav-menu">
         <li class="nav-item">
           <a href="/" class="nav-link">Accueil</a>
         </li>
@@ -56,6 +56,36 @@
       <h3 class="white">Créer une facture</h3>
       <hr />
     </section>
+    <form>
+      <label for="client">Client<sup>*</sup></label>
+      <input id="client" type="text" required></input>
+
+      <label for="type">Type<sup>*</sup></label>
+      <input id="type" type="text" required></input>
+
+      <label for="date">Date de facturation<sup>*</sup></label>
+      <input id="date" type="date" required></input>
+
+      <label for="cond_reg">Conditions de règlement<sup>*</sup></label>
+      <input id="cond_reg" type="text" required></input>
+
+      <label for="mode_reg">Mode de règlement<sup>*</sup></label>
+      <input id="mode_reg" type="text" required></input>
+
+      <label for="compt_bank">Compte bancaire<sup>*</sup></label>
+      <input id="compt_bank" type="text" required></input>
+
+      <label for="mode_doc">Modèle de document<sup>*</sup></label>
+      <input id="mode_doc" type="text" required></input>
+
+      <label for="note_pub">Note (publique)</label>
+      <textarea id="note_pub" maxlength="2000"></textarea>
+
+      <label for="note_priv">Note (privée)</label>
+      <textarea id="note_priv" maxlength="2000"></textarea>
+
+      <input id="envoie" type="submit" value="Envoyer" class="connect"></input>
+    </form>
     <section>
       <form>
       </form>

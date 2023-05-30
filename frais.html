@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light" />
   <link rel="stylesheet" type="text/css" href="css/styles.css" />
-  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="icon" href="assets/babarelephant.svg" type="image/svg+xml"/>
   <title>Note de frais</title>
 
   <!-- fonts -->
@@ -24,7 +24,7 @@
     <nav class="navbar">
       <a href="accueil.html" class="nav-branding">DolibarrAPI</a>
 
-      <ul class="nav-menu medium-blur">
+      <ul class="nav-menu">
         <li class="nav-item">
           <a href="/" class="nav-link">Accueil</a>
         </li>
@@ -60,16 +60,22 @@
       <form>
         <label for="date_deb">Date de début<sup>*</sup></label>
         <input id="date_deb" type="date" required></input>
+
         <label for="date_fin">Date de fin<sup>*</sup></label>
         <input id="date_fin" type="date" required></input>
+
         <label for="user">Utilisateur<sup>*</sup></label>
         <input id="user" type="text" required list="user"></input>
+
         <label for="approb">Approbateur<sup>*</sup></label>
         <input id="approb" type="text" required list="approbateur"></input>
+
         <label for="note_pub">Note (publique)</label>
         <textarea id="note_pub" maxlength="2000"></textarea>
+
         <label for="note_priv">Note (privée)</label>
         <textarea id="note_priv" maxlength="2000"></textarea>
+
         <input id="envoie" type="submit" value="Envoyer" class="connect"></input>
       </form>
       <datalist id="user">

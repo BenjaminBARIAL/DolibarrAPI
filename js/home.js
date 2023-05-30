@@ -1,6 +1,3 @@
-let api_key = atob(decodeURIComponent(getCookie('token')));
-let domaine = decodeURIComponent(getCookie('domaine'));
-let url = `http://${domaine}/api/index.php/`;
 let login = getCookie('identite');
 const title = document.getElementById('user');
 
