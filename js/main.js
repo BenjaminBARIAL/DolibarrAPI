@@ -624,3 +624,25 @@ document.querySelectorAll('textarea').forEach(textarea => {
         }
     });
 });
+
+/*
+* Récupère l'ID de l'utilisateur courant
+*/
+async function getID() {
+    let url = `http://${domaine}users/info`;
+    let response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'DOLAPIKEY': api_key,
+            'Accept': 'application/json'
+        }
+    });
+    if (response.ok) {
+        const Data = await response.json();
+        let id = Data.id;
+        return id;
+    }
+    else {
+        throw (response.Error);
+    }
+}

@@ -1,21 +1,23 @@
-const envoie = document.getElementById('envoie')
+const envoie = document.getElementById('envoie');
+const id = getID();
+console.log(id)
 
 envoie.addEventListener('click', e => {
   e.preventDefault()
   const date_deb = DateToTimestamp(antiXSS(document.getElementById('date_deb').value));
   const date_fin = DateToTimestamp(antiXSS(document.getElementById('date_fin').value));
   if (date_deb < date_fin) {
-    const user = antiXSS(document.getElementById('user').value);
-    const approb = antiXSS(document.getElementById('approb').value);
+    const montant = antiXSS(document.getElementById('montant').value);
     const note_pub = antiXSS(document.getElementById('note_pub').value);
     const note_priv = antiXSS(document.getElementById('note_priv').value);
     note = {
-      "fk_user_author": user,
-      "date_debut": date_deb,
-      "date_fin": date_fin,
-      "user_validation": approb,
-      "note_public": note_pub,
-      "note_private": note_priv
+      "fk_user_author":id,
+      "date_debut":date_deb,
+      "date_fin":date_fin,
+      "fk_user_approve":1,
+      "note_public":note_pub,
+      "note_private":note_priv,
+      "total_ttc": montant
     }
     sendExpenseReports(note, domaine, api_key);
     location.reload();
@@ -32,7 +34,7 @@ fetchExpenseReports().then(notes => {
 
 async function sendExpenseReports(note, domaine, api_key) {
   url = `http://${domaine}expensereports`;
-  fetch(url, {
+  await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
