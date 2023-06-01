@@ -3,23 +3,21 @@ let domaine = decodeURIComponent(getCookie('domaine'));
 
 /*
  * Gestion du fond d'écran
+ ! Fonctionne sur mobile et écran <= 1080p
+ ! Pas sur UHD, 4k et +
  */
 const body = document.querySelector("body");
-if (body.hasAttribute('data-bg') && body.getAttribute('data-bg') !== 'no') {
+if (body.hasAttribute('data-bg') && body.getAttribute('data-bg') === 'yes') {
     var counter = 0;
     fetch("/assets/backgrounds/")
         .then(response => response.text())
         .then(data => {
-            // Extraire les noms de fichiers des images du HTML de la réponse
             let parser = new DOMParser();
             let htmlDoc = parser.parseFromString(data, "text/html");
             let images = Array.from(htmlDoc.getElementsByTagName("a"))
                 .filter(img => img.title.match(/\.jpg$|\.png$|\.gif$|\.webp$/))
                 .map(img => img.title);
-
             counter += images.length;
-
-            // Faire quelque chose avec les images récupérées
             let number = Math.floor(Math.random() * counter) + 1;
             body.style.backgroundImage = `url('/assets/backgrounds/${images[number - 1]}')`;
         });
@@ -28,7 +26,7 @@ if (body.hasAttribute('data-bg') && body.getAttribute('data-bg') !== 'no') {
 /*
  * Gestion de la navbar
  */
-if (body.hasAttribute('data-nav') && body.getAttribute('data-nav') !== 'no') {
+if (body.hasAttribute('data-nav') && body.getAttribute('data-nav') === 'yes') {
     const hamb = document.querySelector('.hamburger');
     const menu = document.querySelector('.nav-menu');
     hamb.addEventListener('click', () => {
@@ -47,7 +45,7 @@ if (body.hasAttribute('data-nav') && body.getAttribute('data-nav') !== 'no') {
 /*
  * Récupération des informations utiles
  */
-if (body.hasAttribute('data-nav') && body.getAttribute('data-nav') !== 'no') {
+if (body.hasAttribute('data-nav') && body.getAttribute('data-nav') === 'yes') {
     const deconnecter = document.getElementById("disconnect");
     deconnecter.addEventListener('click', e => {
         e.preventDefault()

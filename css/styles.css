@@ -4,7 +4,6 @@
   --primary-color: #4e0146;
   --button-picture: 225px;
   --button-card: 175px;
-  --rgb: color-change 5s infinite;
 }
 
 * {
@@ -89,65 +88,11 @@ a {
 .nav-branding {
   font-size: 2rem;
   font-weight: bold;
-  animation: var(--rgb);
-}
-
-@keyframes color-change {
-  100%,
-  0% {
-    color: #f00;
-    transform: rotate(15deg);
-  }
-  8% {
-    color: #f70;
-    transform: rotate(-15deg);
-  }
-  16% {
-    color: #ff0;
-    transform: rotate(15deg);
-  }
-  25% {
-    color: #7f0;
-    transform: rotate(-15deg);
-  }
-  33% {
-    color: #0f0;
-    transform: rotate(15deg);
-  }
-  41% {
-    color: #0f7;
-    transform: rotate(-15deg);
-  }
-  50% {
-    color: #0ff;
-    transform: rotate(15deg);
-  }
-  58% {
-    color: #07f;
-    transform: rotate(-15deg);
-  }
-  66% {
-    color: #00f;
-    transform: rotate(15deg);
-  }
-  75% {
-    color: #70f;
-    transform: rotate(-15deg);
-  }
-  83% {
-    color: #f0f;
-    transform: rotate(15deg);
-  }
-  91% {
-    color: #f07;
-    transform: rotate(-15deg);
-  }
 }
 
 .nav-link:hover {
   text-decoration: underline;
   text-decoration-style: dashed;
-  animation: var(--rgb);
   cursor: pointer;
 }
 
@@ -375,7 +320,7 @@ p {
 
 .actions:hover {
   transform: scale(1.1);
-  transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.3s;
 }
 
 .button-text {
@@ -384,19 +329,18 @@ p {
   margin-top: 1em;
 }
 
-.actions .icon {
+svg {
   justify-items: center;
   display: flex;
   margin: auto;
   width: 50%;
   height: 50%;
   margin-top: 15%;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 }
 ²
-.actions .icon:hover {
+svg:hover {
   transform: scale(1.1);
-  transition: all ease-in-out 0.5s;
 }
 
 input[type="text"],
@@ -481,8 +425,8 @@ textarea::after {
   }
   .nav-menu {
     position: fixed;
-    top: -200%;
-    left: 0;
+    top: -1000%;
+    left: 12.5%;
     gap: 0;
     flex-direction: column;
     width: 100%;
@@ -491,8 +435,8 @@ textarea::after {
   }
   .nav-menu.active {
     margin: 0;
-    top: 100%;
-    left: 0;
+    left: 12.5%;
+    top: 0;
   }
   .background {
     background-size: 100svw 100svh;

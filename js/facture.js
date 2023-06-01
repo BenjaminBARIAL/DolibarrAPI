@@ -20,9 +20,10 @@ envoie.addEventListener('click', e => {
     //? "": compt_bank,
     //? "": mode_doc,
     "note_public": note_pub,
-    "note_private": note_priv,
+    "note_private": note_priv
   }
-  sendInvoices(note, domaine, api_key)
+  sendInvoices(note, domaine, api_key);
+  location.reload();
 })
 
 fetchInvoices().then(factures => {
