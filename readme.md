@@ -15,3 +15,8 @@
 # Notes :
 - ! Ne plus toucher au fichier [login](js/login.js) !
 - ! Certain paramètres doivent encoder en URI avant de les envoyés à l'API
+
+# Maquettes :
+| index | about |
+| :---: | :---: |
+![index](maquette_index.svg) | ![index](maquette_about.svg)
